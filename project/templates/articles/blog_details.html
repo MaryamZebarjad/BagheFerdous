@@ -1,0 +1,37 @@
+{% extends "maintemplate.html" %}
+
+{% block title %}مقاله{% endblock title %}
+
+{% block content %}
+<div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="caption">
+                <h2 class="h3-center">{{article.title}}</h2><hr>
+                <strong>گروه مقاله :</strong> {{article.group}}<br>
+                <strong>نویسندگان :</strong>
+                {% for i in articles_authors %}
+                    {% for author in authors  %}
+                        {% if i.author_id == author.id %}
+                            {{author.name}} {{author.family}}&nbsp;&nbsp;
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div> 
+            <strong>چکیده : </strong>{{article.short_text}}<br> 
+            <strong>کلمات کلیدی :</strong> {{article.key_words}}<br>
+            <strong>تعداد بازدید :</strong> {{article.view_number}}<br>
+            <strong>متن مقاله :</strong> {{article.text}}<br>
+        </div>
+        <strong>تصاویر مرتبط با مقاله :</strong><br>
+        {% for image in image_list  %}
+        <a target="_blank" href="{{media_url}}/images/articles/article_{{article.id}}/{{image}}" alt="{{article.title}}">
+            <img src="{{media_url}}/images/articles/article_{{article.id}}/{{image}}" alt="{{article.title}}">
+        </a>
+        {% endfor %}
+        <br>
+        <strong><a  href="{% url "articles:article_pdf" article.id %}">دانلود متن مقاله</a></strong>
+</div> 
+{% endblock %}
+
+
+

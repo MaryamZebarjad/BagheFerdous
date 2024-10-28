@@ -1,0 +1,23 @@
+{% extends "maintemplate.html" %}
+
+{% block title %}تماس با ما | باغ فردوس{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div style="text-align:right">
+      <h2>تماس با ما</h2>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="form-box">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_table}}<br>
+                    <input type="submit" value="ارسال پیام">
+                </form> 
+            </div> 
+        </div>   
+        
+    </div>
+</div>
+{% endblock content %}

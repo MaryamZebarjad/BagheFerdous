@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    {% comment %} for icon {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+</head>
+<body style dir='rtl'>
+    {% include "partials/header.html " %}
+    {% include "partials/navbar.html " %}
+    <div class='container'>
+        {% include "partials/messages.html" %}
+    {% block content %}{% endblock %}    
+    </div> 
+    {% include "partials/script.html " %}
+</body>
+</html>

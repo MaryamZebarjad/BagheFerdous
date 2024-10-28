@@ -1,0 +1,34 @@
+{% extends 'maintemplate.html' %}
+{% block title %}
+  گارگاه ها
+{% endblock %}
+{% block content %}
+  <main>
+    <section class="workshoplist-section1">
+      {% for workshop in workshops %}
+        <section class="workshoplist-section1__1">
+          <i class="glyphicon glyphicon-bullhorn"></i>
+          <h2>{{ workshop.title }}</h2>
+        </section>
+        <section class="workshoplist-section1__2">
+          <img src="{{ media_url }}{{ workshop.image_name }}" alt="{{ workshop.title }}" class="img-300x200" />
+        </section>
+        <section class="workshoplist-section1__3">
+          <strong>تاریخ و زمان برکزاری : </strong>{{ workshop.date_time }}<br>
+          <strong>مکان بر گزاری : </strong>{{ workshop.place }}<br>
+          <strong>مدرس : </strong>{{ workshop.teacher }}<br>
+          <strong>اطلاعات : </strong>{{ workshop.information }}<br>
+          <strong>شرایط ثبت نام : </strong>{{ workshop.registration }}<br>
+        </section>
+        <section class="workshoplist-section1__4">
+          {% if workshop.status_id == 3 %} 
+            <a class="btn btn-success" href="{% url 'workshops:workshopreport' workshop.id %}">مشاهده گزارش کارگاه</a>
+          {% endif %}    
+        </section>
+        <hr>
+      {% endfor %} 
+    </section>
+  </main>
+  
+{% include "partials/paginator.html" %} 
+{% endblock %}

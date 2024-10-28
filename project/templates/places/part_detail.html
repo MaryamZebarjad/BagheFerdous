@@ -1,0 +1,9 @@
+{% extends "maintemplate.html" %}
+
+{% block title %}جزئیات مکان{% endblock title %}
+
+{% block content %}
+    <h1>{{place.place_name}}</h1>
+    <img src="{{media_url}}/{{place.place_image_name}}" alt="">
+    <p>{{place.information}}</p>
+{% endblock content %}

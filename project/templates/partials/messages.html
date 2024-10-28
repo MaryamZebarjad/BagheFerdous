@@ -1,0 +1,6 @@
+{% if messages %}
+    {% for message in messages  %}
+    {% comment %} bootstrap class 'success' 'danger' {% endcomment %}
+    <h2 class="atert alert-{{message.tags}}">{{message}}</h2>  
+    {% endfor %}
+{% endif %}

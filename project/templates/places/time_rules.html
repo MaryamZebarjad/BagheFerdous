@@ -1,0 +1,37 @@
+{% extends "maintemplate.html" %}
+
+{% block title %}زمانبندی بازدیدوقوانین باغ فردوس{% endblock title %}
+
+{% block content %}
+<h2>روز و زمان بازدید</h2>
+<ul>
+    {% for place in  places %}
+        <li>
+            <strong>{{place.place_name}}</strong> : <strong class="value1">{{place.visiting_day}}</strong> | <strong>{{place.visiting_hour}}</strong>
+            <br>
+        </li>
+    {% endfor %} 
+</ul>
+<hr>
+<h1>نرخ بلیط ها</h1>
+<ul>
+    {% for ticket in ticket_price  %}
+        <li>
+            
+            <strong>{{ticket.place}}</strong>
+            <span>برای بازدید کننده</span>
+            <strong>{{ticket.visitor_type}}</strong>
+            <span>:</span>
+            <strong class="value1">{{ticket.price}}</strong>
+        </li>
+    {% endfor %}
+</ul>
+<hr>
+<h1>قوانین و مقررات</h1>
+    {% for place in places %}
+        <strong >{{place.place_name}}</strong><br>
+        {% autoescape off %}
+            {{place.rules}}<br>
+        {% endautoescape %}
+    {% endfor %}
+{% endblock content %}

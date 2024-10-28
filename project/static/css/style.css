@@ -1,0 +1,83 @@
+body{ 
+    background-color: rgb(229, 229, 223) !important;
+    font-family:'nazanin' !important;
+}
+.jumbotron{
+    background:yellowgreen !important;
+    padding: 0.5rem 0.5rem !important;
+    margin-bottom: 0px !important;
+}
+.header{
+    background:rgba(185, 185, 184, 0.839) !important;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    border-radius: 1cap;
+}
+@font-face{
+    font-family:'yekan';
+    src:url('../fonts/Yekan.eot?#')format('eot');
+    src:url('../fonts/Yekan.ttf')format('truetype');
+    src:url('../fonts/Yekan.woff')format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face{
+    font-family:'danstevis';
+    src:url('../fonts/danstevis.eot?#')format('eot');
+    src:url('../fonts/danstevis.ttf')format('truetype');
+    src:url('../fonts/danstevis.woff')format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face{
+    font-family:'koodak';
+    src:url('../fonts/koodak.eot?#')format('eot');
+    src:url('../fonts/koodak.ttf')format('truetype');
+    src:url('../fonts/koodak.woff')format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face{
+    font-family:'nazanin';
+    src:url('../fonts/nazanin.eot?#')format('eot');
+    src:url('../fonts/nazanin.ttf')format('truetype');
+    src:url('../fonts/nazanin.woff')format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+.img-100{
+    width: 100px;
+    height: 100px;
+}
+
+.img-300X250{
+    width:300px !important;
+    height:250px !important;
+}
+
+.description{
+    max-height:200px;
+    overflow:hidden;
+}
+
+.value1{
+    color: red;
+}
+.h1-center,.h3-center{
+    text-align: center !important;
+}
+
+.bi-heart{
+cursor: pointer;
+}
+
+.bi-heart-fill{
+cursor: default !important;
+}
+
+.img-thumbnail{
+  border: 1px solid #ddd !important;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px; 
+}

@@ -1,0 +1,24 @@
+{% extends 'maintemplate.html' %}
+{% block title %}گزارش کارگاه{% endblock %}
+{% block content %}
+<main>
+<section class="workshopreport-viewnumber">
+<span>تعداد بازدید گزارش :<strong class="badg-success"> {{workshops.view_number}} </strong> بازدید</span>
+</section>
+<hr>
+<section class = "workshopreport-section2">
+<h3> متن گزارش کارگاه </h3>
+{% autoescape off %}
+{{workshops.report_text}}
+{% endautoescape %}
+</section>
+<section class = "workshopreport-section3">
+{% if image_list%}
+    {% for image in image_list %}
+    <img src="{{media_url}}images/workshops/report/{{workshops.id}}/{{image}}" class="img-300x200" alt="{{workshop.title}}"> 
+    {% endfor %}
+{% endif %}
+</section>
+</main>
+{% endblock %}
+

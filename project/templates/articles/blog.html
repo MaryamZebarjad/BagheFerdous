@@ -1,0 +1,43 @@
+{% extends "maintemplate.html" %}
+
+{% block title %}باغ فردوس{% endblock title %}
+
+{% block content %}
+    <h1 class="h1-center text-secondary">مقالات</h1>
+    <hr>
+<div class="row">
+    {% for article in articles %}
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="thumbnail">
+                <img src="{{media_url}}images/articles/{{article.image_name}}" alt="{{article.title}}" class="img-300X200">
+            </div>
+            <div >
+            <div class="caption">
+                <h2 class="h3-center">{{article.title}}</h2><hr>
+                <p class="description">{{article.short_text}}</p>
+                <hr>
+                <strong>نوع مقاله : </strong>{{article.group}}<strong> | تاریخ انتشار : </strong> {{article.update_date}}<strong> | تعداد بازدید : </strong>{{article.view_number}}
+                <strong>نویسندگان :</strong>
+                {% for i in articles_authors %}
+                    {% if i.article_id == article.id %}
+                        {% for author in authors  %}
+                            {% if i.author_id == author.id %}
+                                {{author.name}} {{author.family}}&nbsp;&nbsp;
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+                <p>
+                    <a href="{% url "articles:blog_details" slug=article.slug %}" class="btn btn-primary btn-block role="button>
+                        <strong>مشاهده مقاله</strong>
+                    </a>
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+</div> 
+{% endblock content %}
+
+
+

@@ -1,0 +1,20 @@
+{% extends 'maintemplate.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+سایت خاطره نویسی
+{% endblock title %}
+{% block content %}
+    <h1 class="text-center text-secondary">ورود کاربر</h1>
+    <div class="row justify-content-md-center">
+        <form action="" method="POST" class="col-md-6" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            {{ memory_form |crispy }}
+            {{ image_formset.management_form }}
+            {% for form in image_formset %}
+                {{ form |crispy  }}
+            {% endfor %}
+            <input type="submit" value="ثبت خاطره" class="btn btn-success btn-block">
+        </form>
+    </div>
+{% endblock content %}
